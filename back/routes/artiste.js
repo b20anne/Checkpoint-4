@@ -3,7 +3,7 @@ const connection = require("../db_connection");
 
 router.get("/", (req, res) => {
   const sql =
-    "SELECT artiste.id, artiste.nom FROM artiste ORDER BY artiste.nom DESC";
+    "SELECT * FROM artiste ORDER BY artiste.nom ASC";
   connection.query(sql, (err, result) => {
     if (err) {
       res.status(500).json({ errorMessage: "Error 500" });
